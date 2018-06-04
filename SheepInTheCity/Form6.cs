@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SheepInTheCity
 {
-    public partial class Form5 : Form
+    public partial class Form6 : Form
     {
-        public Form5()
+        public Form6()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLoseExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

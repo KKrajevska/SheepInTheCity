@@ -53,6 +53,7 @@
             this.btnOld.TabIndex = 1;
             this.btnOld.Text = "Load Game";
             this.btnOld.UseVisualStyleBackColor = true;
+            this.btnOld.Click += new System.EventHandler(this.btnOld_Click);
             // 
             // Form4
             // 
@@ -63,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(350, 124);
             this.Controls.Add(this.btnOld);
             this.Controls.Add(this.btnNew);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
             this.Text = "Sheep Away?";
