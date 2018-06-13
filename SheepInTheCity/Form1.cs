@@ -10,27 +10,39 @@ using System.Windows.Forms;
 
 namespace SheepInTheCity
 {
-    public partial class Form1 : Form
+    public partial class FormStartingWindow : Form
     {
-        
-        private Form3 form3;
-        private Form4 form4;
-        public Form1()
+  
+        private FormHowToPlay formHowToPlay;
+        private FormPlay formPlay;
+        public FormStartingWindow()
         {
             InitializeComponent();
         }
 
         private void btnHow_Click(object sender, EventArgs e)
         {
-            form3 = new Form3();
-            form3.Show();
+            this.Hide();
+            formHowToPlay = new FormHowToPlay();
+            formHowToPlay.Show();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            form4 = new Form4();
-            form4.Show();
+            this.Hide();
+            formPlay = new FormPlay();
+            formPlay.Show();
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

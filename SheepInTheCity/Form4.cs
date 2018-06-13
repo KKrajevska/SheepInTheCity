@@ -12,23 +12,31 @@ using System.Windows.Forms;
 
 namespace SheepInTheCity
 {
-    public partial class Form4 : Form
+    public partial class FormPlay : Form
     {
-        private Form2 form2;
-        public Form4()
+        private FormGame formGame;
+        public FormPlay()
         {
             InitializeComponent();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            form2 = new Form2();
-            form2.Show();
+            this.Hide();
+            formGame = new FormGame();
+            formGame.Show();
         }
 
         private void btnOld_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormStartingWindow formStartingWindow = new FormStartingWindow();
+            formStartingWindow.Show();
         }
     }
 }

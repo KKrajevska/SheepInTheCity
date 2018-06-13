@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace SheepInTheCity
 {
-    public partial class Form3 : Form
+    public partial class FormHowToPlay : Form
     {
-        public Form3()
+        public FormHowToPlay()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormStartingWindow formStartingWindow = new FormStartingWindow();
+            formStartingWindow.Show();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

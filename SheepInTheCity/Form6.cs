@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SheepInTheCity
 {
-    public partial class Form6 : Form
+    public partial class FormLoser : Form
     {
-        public Form6()
+        public FormLoser()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace SheepInTheCity
         private void btnLoseExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLoseNewGame_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormGame formGame = new FormGame();
+            formGame.Show();
         }
     }
 }
