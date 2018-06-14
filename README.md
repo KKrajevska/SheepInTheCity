@@ -28,4 +28,79 @@ Windows Forms Project by: Natasha Ilievska, Kristina Krajevska and Sara Spasikj.
 
 Со одбирање на опцијата - How to play се отвара форма (Слика 3) која содржи кратко објаснување за играта и која е нејзината цел.
 
-### 2.3 Scores
+![Screenshot](Forma2_1.png)
+![Screenshot](Forma2_2.png)
+
+
+Движењето на овцата е овозможено на едноставен начин, со притискање на стрелките од тастатурата. Истата може да се движи во сите четири насоки. Целта на играта е да се однесат 5 овци, една по една, секоја соодветно сместена во некој од 5-те квадрати. Играта може да  се паузира со притискање на буквата P од тастатура. Со повторно притискање на оваа буква, играта може да се продолжи од каде што била паузирана.  
+
+
+## 3. Претставување на проблемот
+
+### 3.1 Податочни структури
+Главните податоци и функции за играта се чуваат во класа public partial class FormGame : Form. 
+
+### 3.2 Функции
+#### 3.2.1 
+```
+private bool IsTouching(PictureBox pbSheep, PictureBox pb)
+        {
+            if (pbSheep.Bounds.IntersectsWith(pb.Bounds))
+                return true;
+            else return false;
+        }
+```
+Оваа функција има за цел да провери дали два објекти од класата PictureBox се допираат или не. Тоа се реализира со користење на својството Control.Bounds и методата HashSet<T>.IntersectWith(IEnumerable<T>). Оваа метода проверува дали границите на pbSheep (PictureBox кој ја претставува овцата) и некој друг PictureBox (пр. автомобил, дрвена платформа) се допираат и соодветно враќа true, или  false.
+
+### 3.2.2 
+```
+ private void livesDecrement() {
+          
+            if (countLives == 1)
+            {
+                timer1.Stop();
+                timer2.Stop();
+                timer3.Stop();
+                timer4.Stop();
+                this.Hide();
+                formLoser = new FormLoser();
+                formLoser.Show();
+            }
+            else {
+                countLives--;
+                lblLivesCount.Text = countLives.ToString();
+                pbSheep.Location = startingPoint;
+
+            }
+        }
+```
+![Screenshot](FormLoser.png)
+
+Функцијата livesDecrement() се повикува секој пат кога овцата допира објект кој претставува опасност, пречка. Функцијата има за цел да го намали бројот на животи и да ја врати овцата на почетната позиција. Доколку се потрошени сите животи се прикажува формата каде што има  две опции: 
+- New Game \- за започнување на нова игра.
+- Exit \- за излез од апликацијата.
+
+## 3.3 Настани
+
+### 3.3.1 
+```
+private void Form2_KeyDown(object sender, KeyEventArgs e)
+```
+Оваа функција е клучна за реализација на движењето на овцата. Исто така секој пат кога се повикува функцијата, се проверува дали овцата 
+е пристигната и сместена во некоја од 5-те квадрати - pbEnd1, pbEnd2, pbEnd3, pbEnd4, pbEnd5. За победа на играта треба во секој од квадратите да има пренесено по една овца пред истекот на времето.
+
+### 3.3.2 Timers
+```
+private void timer1_Tick(object sender, EventArgs e)
+```
+```
+private void timer2_Tick(object sender, EventArgs e)
+```
+```
+private void timer3_Tick(object sender, EventArgs e)
+```
+```
+private void timer4_Tick(object sender, EventArgs e)
+```
+Улогата на timer_Tick настаните се користат за регулирање на движењето на автомобилите, возовите и дрвените платформи односно нивната брзина на движење и поставување на граници на просторот во кој се движат. Исто така тука се повикува методот isTouching на интервали. Еден од тајмерите служи за одбројување на секундите за кои играчот треба да ја помине играта. Доколку истече времето играта се смета за завршена и нема победа во овој случај.
+
