@@ -9,13 +9,13 @@ Windows Forms Project by: Natasha Ilievska, Kristina Krajevska and Sara Spasikj.
 ## 2. Упатство за користење
 ###### *Слика 1*
   
-![Screenshot](SheepInTheCity.png)
+![Screenshot](SheepInTheCityStart.png)
 
 На почетниот прозорец (Слика 1) при стартување на апликацијата има три можности: Play, How to play? и Scores.
 ### 2.1 Play
 ###### *Слика 2*
 
-![Screenshot](SheepAway.png)
+![Screenshot](SheepInTheCityNew.png)
 
 Со одбирање на првата опција - Play се отвара нов прозорец (Слика 2) каде што имаме две можности:
 - New Game \- за започнување на нова игра.
