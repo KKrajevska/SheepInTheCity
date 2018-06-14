@@ -15,6 +15,7 @@ namespace SheepInTheCity
   
         private FormHowToPlay formHowToPlay;
         private FormPlay formPlay;
+        
         public FormStartingWindow()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace SheepInTheCity
 
         private void btnScores_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

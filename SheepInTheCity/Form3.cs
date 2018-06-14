@@ -28,5 +28,10 @@ namespace SheepInTheCity
         {
 
         }
+
+        private void FormHowToPlay_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

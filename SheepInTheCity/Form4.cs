@@ -38,5 +38,10 @@ namespace SheepInTheCity
             FormStartingWindow formStartingWindow = new FormStartingWindow();
             formStartingWindow.Show();
         }
+
+        private void FormPlay_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

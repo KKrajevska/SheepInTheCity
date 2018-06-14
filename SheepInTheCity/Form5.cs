@@ -30,5 +30,12 @@ namespace SheepInTheCity
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormGame formGame = new FormGame();
+            formGame.Show();
+        }
     }
 }
