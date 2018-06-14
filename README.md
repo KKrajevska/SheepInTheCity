@@ -22,4 +22,10 @@ Windows Forms Project by: Natasha Ilievska, Kristina Krajevska and Sara Spasikj.
 - Load Game \- за продолжување на постоечка игра.
 
 ### 2.2 How to play?
+###### *Слика 3*
+
+![Screenshot](HowToPlay.png)
+
+Со одбирање на опцијата - How to play се отвара форма (Слика 3) која содржи кратко објаснување за играта и која е нејзината цел.
+
 ### 2.3 Scores
