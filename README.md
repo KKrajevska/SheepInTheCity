@@ -127,12 +127,25 @@ private void timer1_Tick(object sender, EventArgs e)
 ```
 
 private void timer2_Tick(object sender, EventArgs e)
+{
+        ...
+         //истите проверки како во timer1_tick, но интервалот на тајмерот е различен
+        ...
+}
+
 ```
-//истите проверки како во timer1_tick, но интервалот на тајмерот е различен
 ```
+}
 private void timer3_Tick(object sender, EventArgs e)
+{
+        ...
+         //истите проверки како во timer1_tick, но интервалот на тајмерот е различен
+        ...
+}
+
+
 ```
-//истите проверки како во timer1_tick, но интервалот на тајмерот е различен
+
 ```
 private void timer4_Tick(object sender, EventArgs e)
         {
