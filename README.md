@@ -97,15 +97,91 @@ private void Form2_KeyDown(object sender, KeyEventArgs e)
 ### 3.3.2 Timers
 ```
 private void timer1_Tick(object sender, EventArgs e)
+{
+            if (!isPaused)
+            {
+
+                if (pbGreenCar.Location.X + pbGreenCar.Size.Width >= 500)
+                {
+                    pbGreenCar.Location = new Point(-10, pbGreenCar.Location.Y);
+                }
+                else pbGreenCar.Location = new Point(pbGreenCar.Location.X + 5, pbGreenCar.Location.Y);
+                if (pbYellowCar.Location.X + pbYellowCar.Size.Width <= 10)
+                {
+                    pbYellowCar.Location = new Point(500, pbYellowCar.Location.Y);
+                }
+                else pbYellowCar.Location = new Point(pbYellowCar.Location.X - 10, pbYellowCar.Location.Y);
+                if (pbRedCar2.Location.X + pbRedCar2.Size.Width <= 10)
+                {
+                    pbRedCar2.Location = new Point(500, pbRedCar2.Location.Y);
+                }
+                else pbRedCar2.Location = new Point(pbRedCar2.Location.X - 10, pbRedCar2.Location.Y);
+                if (IsTouching(pbSheep, pbGreenCar) || IsTouching(pbSheep, pbYellowCar) || IsTouching(pbSheep, pbRedCar2))
+                {
+                    livesDecrement();
+                }
+            }
+        }
+
 ```
 ```
+
 private void timer2_Tick(object sender, EventArgs e)
 ```
+\\истите проверки како во timer1_tick, но интервалот на тајмерот е различен
 ```
 private void timer3_Tick(object sender, EventArgs e)
 ```
+\\истите проверки како во timer1_tick, но интервалот на тајмерот е различен
 ```
 private void timer4_Tick(object sender, EventArgs e)
+        {
+            if (!isPaused)
+            {
+                time--;
+                lblTime.Text = string.Format("Time: {0}", time.ToString());
+                if (time == 0)
+                {
+                    timer4.Stop();
+                    this.Hide();
+                    formLoser = new FormLoser();
+                    formLoser.Show();
+                }
+                if (countSheep == 5)
+                {
+                    timer4.Stop();
+                    this.Hide();
+                    formWinner = new FormWinner();
+                    formWinner.label1.Text = string.Format("Your score is: {0}", time.ToString());
+                    formWinner.Show();
+
+                }
+            }
+        }
+        {
+            if (!isPaused)
+            {
+                time--;
+                lblTime.Text = string.Format("Time: {0}", time.ToString());
+                if (time == 0)
+                {
+                    timer4.Stop();
+                    this.Hide();
+                    formLoser = new FormLoser();
+                    formLoser.Show();
+                }
+                if (countSheep == 5)
+                {
+                    timer4.Stop();
+                    this.Hide();
+                    formWinner = new FormWinner();
+                    formWinner.label1.Text = string.Format("Your score is: {0}", time.ToString());
+                    formWinner.Show();
+
+                }
+            }
+        }
+
 ```
 Улогата на timer_Tick настаните се користат за регулирање на движењето на автомобилите, возовите и дрвените платформи односно нивната брзина на движење и поставување на граници на просторот во кој се движат. Исто така тука се повикува методот isTouching на интервали. Еден од тајмерите служи за одбројување на секундите за кои играчот треба да ја помине играта. Доколку истече времето играта се смета за завршена и нема победа во овој случај.
 
